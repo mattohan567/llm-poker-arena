@@ -1,0 +1,32 @@
+[project]
+name = "llm-poker-arena"
+version = "0.1.0"
+description = "Multi-agent poker evaluation framework for testing LLMs"
+requires-python = ">=3.11"
+dependencies = [
+    "pokerkit>=0.5.0",
+    "litellm>=1.0.0",
+    "supabase>=2.0.0",
+    "pydantic-settings>=2.0.0",
+    "typer>=0.9.0",
+    "rich>=13.0.0",
+    "python-dotenv>=1.0.0",
+    "fastapi>=0.109.0",
+    "uvicorn[standard]>=0.27.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+]
+
+[project.scripts]
+llm-poker = "llm_poker.cli.main:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/llm_poker"]
