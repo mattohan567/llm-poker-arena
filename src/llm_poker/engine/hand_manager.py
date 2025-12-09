@@ -1,8 +1,6 @@
 """Hand manager for orchestrating a single poker hand."""
 
-import asyncio
-from dataclasses import dataclass, field
-from typing import Any
+from dataclasses import dataclass
 from uuid import UUID
 
 from llm_poker.engine.game_state import GameStateWrapper, GameStateSnapshot
@@ -245,7 +243,7 @@ class HandManager:
             )
 
             # Execute action
-            result = self.game_state.execute_action(response.action)
+            self.game_state.execute_action(response.action)
 
             # Log decision
             self.decision_number += 1

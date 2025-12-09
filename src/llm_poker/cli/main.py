@@ -66,7 +66,7 @@ def hand(
     ),
 ):
     """Play a single hand between two models (for debugging)."""
-    console.print(f"\n[bold]Playing single hand[/bold]")
+    console.print("\n[bold]Playing single hand[/bold]")
     console.print(f"  {model1} vs {model2}")
 
     async def run():
@@ -85,7 +85,7 @@ def hand(
         # Print detailed decision log
         if result.hand_results:
             hand_result = result.hand_results[0]
-            console.print(f"\n[bold]Hand Details[/bold]")
+            console.print("\n[bold]Hand Details[/bold]")
             console.print(f"  Board: {hand_result.board_cards}")
             console.print(f"  Pot: ${hand_result.pot_size:,}")
             console.print(f"  Decisions: {hand_result.decisions_count}")
@@ -160,7 +160,7 @@ def heads_up(
                 result.winner, loser, draw=False
             )
             elo_system.save_to_file()  # Persist to disk
-            console.print(f"\n[bold]ELO Updates[/bold]")
+            console.print("\n[bold]ELO Updates[/bold]")
             console.print(f"  {result.winner.split('/')[-1]}: {new_winner_elo}")
             console.print(f"  {loser.split('/')[-1]}: {new_loser_elo}")
 
@@ -203,7 +203,7 @@ def round_robin(
     """Run a round robin tournament (all pairs play each other)."""
     model_list = list(models) if models else DEFAULT_MODELS
 
-    console.print(f"\n[bold]Round Robin Tournament[/bold]")
+    console.print("\n[bold]Round Robin Tournament[/bold]")
     console.print(f"  Models: {len(model_list)}")
     console.print(f"  Matches: {len(model_list) * (len(model_list) - 1) // 2}")
     console.print(f"  Hands per match: {hands_per_match}")
@@ -268,7 +268,7 @@ def full_table(
         console.print("[red]Need at least 2 models for a tournament[/red]")
         raise typer.Exit(1)
 
-    console.print(f"\n[bold]Full Table Tournament[/bold]")
+    console.print("\n[bold]Full Table Tournament[/bold]")
     console.print(f"  Players: {len(model_list)}")
     console.print(f"  Starting stack: ${stack:,}")
     console.print(f"  Initial blinds: ${small_blind:,}/${big_blind:,}")
@@ -360,7 +360,7 @@ def serve(
     """Start the FastAPI REST API server."""
     import uvicorn
 
-    console.print(f"\n[bold]Starting LLM Poker Arena API[/bold]")
+    console.print("\n[bold]Starting LLM Poker Arena API[/bold]")
     console.print(f"  Host: {host}")
     console.print(f"  Port: {port}")
     console.print(f"  Docs: http://{host if host != '0.0.0.0' else 'localhost'}:{port}/docs")

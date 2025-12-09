@@ -1,6 +1,5 @@
 """Full table (6-player) tournament runner."""
 
-import asyncio
 from dataclasses import dataclass, field
 from typing import Callable
 from uuid import UUID

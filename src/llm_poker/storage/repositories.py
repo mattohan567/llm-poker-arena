@@ -11,8 +11,7 @@ from llm_poker.storage.models import (
     Hand, HandCreate,
     HandParticipant, HandParticipantCreate,
     Decision, DecisionCreate,
-    ModelStats, ModelStatsCreate,
-    MatchupStats,
+    ModelStats, MatchupStats,
 )
 
 

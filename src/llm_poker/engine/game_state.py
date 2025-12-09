@@ -1,10 +1,10 @@
 """Game state wrapper around pokerkit for No-Limit Texas Hold'em."""
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Any
 import random
 
-from pokerkit import Automation, NoLimitTexasHoldem, Card
+from pokerkit import Automation, NoLimitTexasHoldem
 
 
 @dataclass

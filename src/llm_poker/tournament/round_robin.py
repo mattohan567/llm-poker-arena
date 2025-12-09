@@ -1,14 +1,11 @@
 """Round robin tournament runner."""
 
-import asyncio
 import itertools
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Callable
-from uuid import UUID
 
 from rich.console import Console
 from rich.table import Table
-from rich.progress import Progress, SpinnerColumn, TextColumn
 
 from llm_poker.tournament.heads_up import HeadsUpMatch, MatchResult
 from llm_poker.config import DEFAULT_MODELS

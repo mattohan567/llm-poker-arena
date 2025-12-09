@@ -12,7 +12,7 @@ from llm_poker.agents.prompts import (
     build_action_prompt,
     build_clarification_prompt,
 )
-from llm_poker.agents.action_parser import ActionParser, ParsedAction
+from llm_poker.agents.action_parser import ActionParser
 from llm_poker.tools.pot_odds import calculate_pot_odds
 from llm_poker.tools.equity import calculate_equity
 from llm_poker.tools.registry import POKER_TOOLS

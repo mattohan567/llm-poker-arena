@@ -1,6 +1,5 @@
 """Heads-up match runner for two players."""
 
-import asyncio
 from dataclasses import dataclass, field
 from typing import Callable
 from uuid import UUID
@@ -13,7 +12,7 @@ from llm_poker.engine.hand_manager import HandManager, HandResult
 from llm_poker.tournament.blind_structure import BlindStructure
 from llm_poker.storage.models import TournamentCreate, ParticipantCreate
 from llm_poker.storage.repositories import (
-    TournamentRepository, ParticipantRepository, StatsRepository,
+    TournamentRepository, ParticipantRepository,
 )
 
 
@@ -109,7 +108,7 @@ class HeadsUpMatch:
         if self.log_to_db:
             await self._init_tournament()
 
-        self.console.print(f"\n[bold]Starting Heads-Up Match[/bold]")
+        self.console.print("\n[bold]Starting Heads-Up Match[/bold]")
         self.console.print(f"  {self.model1} vs {self.model2}")
         self.console.print(f"  {self.num_hands} hands, ${self.starting_stack:,} starting stack")
         self.console.print()
